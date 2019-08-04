@@ -31,7 +31,7 @@ class ContactDetailsPage extends Component {
 
 
     render() {
-        const {contact} = this.state;
+        
       return <div className="contact-edit">
           <form onSubmit={this.handleSubmit}>
             <input type="text" name="name" onChange={this.handleChange} value={this.state.contact.name}/>
@@ -40,8 +40,6 @@ class ContactDetailsPage extends Component {
             <button>Save</button>
           </form>
         </div>
-    
-      
     }
 }
 
