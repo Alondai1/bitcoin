@@ -5,7 +5,7 @@ import BitcoinService from '../services/BitcoinService'
 class HomePage extends Component {
 
     state = {
-        user: { name: '' },
+        user: { name: '', coins:0},
         BCvalue: null
     }
 
@@ -13,7 +13,8 @@ class HomePage extends Component {
         const user = await UserService.getUsers()
         this.setState({ user })
         const BCvalue = await BitcoinService.getRate(this.state.user.coins)
-        this.setState({ BCvalue })
+        this.setState({BCvalue })
+      
     }
 
 

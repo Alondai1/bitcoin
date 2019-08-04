@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-// import './App.css';
+
 
 class UserPreview extends Component {
-
   state = { }
-
-
   render() {
     return <li className="userItem">
 {this.props.contact.name}

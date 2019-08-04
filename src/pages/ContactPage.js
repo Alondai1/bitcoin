@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-// import './App.css';
 import ContactService from '../services/ContactService.js'
 import UserList from '../components/UserList.js'
 import ContactFilter from '../components/ContactFilter.js'
+import { Link } from 'react-router-dom'
+
 
 class ContactPage extends Component {
 
@@ -11,19 +12,22 @@ class ContactPage extends Component {
   async componentDidMount() {
     const contacts = await ContactService.getContacts()
     this.setState({ contacts })
-    console.log(this.state.contacts);
   }
 
-   setFilter = async (filterBy)=> {    
-    const contacts = await ContactService.getContacts({term: filterBy})  
-      
+  setFilter = async (filterBy) => {
+    const contacts = await ContactService.getContacts({ term: filterBy })
     this.setState({ contacts })
   }
 
+
+
   render() {
     return <div className="page">
-      <ContactFilter setFilter = {this.setFilter}></ContactFilter>
-      <UserList contacts={this.state.contacts}></UserList>
+      <Link to="/edit">
+        <button>Add Contact</button>
+      </Link>
+      <ContactFilter setFilter={this.setFilter}></ContactFilter>
+      <UserList removeContact={this.removeContact} contacts={this.state.contacts}></UserList>
 
     </div>
   }
