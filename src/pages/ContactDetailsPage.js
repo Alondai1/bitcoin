@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ContactService from '../services/ContactService'
 import { Link } from 'react-router-dom'
+import { deleteContact} from '../store/actions/contactActions';
+import { connect } from 'react-redux';
+
+
 
 
 class ContactDetailsPage extends Component {
@@ -13,8 +17,9 @@ class ContactDetailsPage extends Component {
         this.setState({ contact })
     }
 
-    removeContact = async () => {
-        await ContactService.deleteContact(this.state.contact._id)
+    deleteContact = () => {
+        const { dispatch } = this.props
+        dispatch(deleteContact(this.state.contact._id)) 
     }
 
 
@@ -26,7 +31,7 @@ class ContactDetailsPage extends Component {
                 </a>
             </Link>
             <Link to="/contact">
-                <a className="waves-effect waves-light btn" onClick={this.removeContact}>  <i className="material-icons">delete
+                <a className="waves-effect waves-light btn" onClick={this.deleteContact}>  <i className="material-icons">delete
 </i>
                 </a>
             </Link>
@@ -43,4 +48,4 @@ class ContactDetailsPage extends Component {
     }
 }
 
-export default ContactDetailsPage; 
+export default connect()(ContactDetailsPage)

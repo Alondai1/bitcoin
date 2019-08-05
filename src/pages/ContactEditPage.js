@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ContactService from '../services/ContactService'
+import { editContact} from '../store/actions/contactActions';
+import { connect } from 'react-redux';
 
 
-class ContactDetailsPage extends Component {
+class ContactEditPage extends Component {
 
     state = { contact: {name:'',email:'', phone: '' }}
 
@@ -13,9 +15,7 @@ class ContactDetailsPage extends Component {
         this.setState({ contact })
     }
 
-    removeContact = async () => {
-         await ContactService.deleteContact(this.state.contact._id)
-    }
+   
 
 
     handleChange = (e) => {     
@@ -23,9 +23,12 @@ class ContactDetailsPage extends Component {
       };
     
       handleSubmit = async e => {
-          e.preventDefault();      
-          await ContactService.saveContact(this.state.contact);
-          const {history} = this.props;
+        e.preventDefault();  
+        const { dispatch } = this.props    
+         await dispatch(editContact(this.state.contact)) 
+         console.log('@@@@', this.props.editedUser);
+         
+          const {history} = this.props;          
           history.push('/contact');
       };
 
@@ -45,4 +48,14 @@ class ContactDetailsPage extends Component {
     }
 }
 
-export default ContactDetailsPage; 
+
+const mapStateToProps = ({contactReducer}) => {
+  const { editedUser } = contactReducer;
+  
+  return {
+    editedUser
+  }
+}
+
+export default connect(mapStateToProps)(ContactEditPage)
+

@@ -3,15 +3,18 @@ import ContactService from '../services/ContactService.js'
 import UserList from '../components/UserList.js'
 import ContactFilter from '../components/ContactFilter.js'
 import { Link } from 'react-router-dom'
+import { getContacts } from '../store/actions/contactActions';
+import { connect } from 'react-redux';
 
 
 class ContactPage extends Component {
 
-  state = { contacts: [] }
 
   async componentDidMount() {
-    const contacts = await ContactService.getContacts()
-    this.setState({ contacts })
+    
+    const { dispatch } = this.props
+    dispatch(getContacts()) 
+    // this.setState({ robots, selectedRobot: robots[0] })
   }
 
   setFilter = async (filterBy) => {
@@ -31,10 +34,10 @@ class ContactPage extends Component {
         </a>
       </Link>
       <ContactFilter setFilter={this.setFilter}></ContactFilter>
-      <UserList removeContact={this.removeContact} contacts={this.state.contacts}></UserList>
+      <UserList removeContact={this.removeContact} ></UserList>
 
     </div>
   }
 }
 
-export default ContactPage; 
+export default connect()(ContactPage)

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import UserPreview from './UserPreview.js'
+import { connect } from 'react-redux';
 
-class App extends Component {
+
+class List extends Component {
 
 
 
@@ -20,4 +22,12 @@ class App extends Component {
   }
 }
 
-export default App; 
+const mapStateToProps = ({contactReducer}) => {
+  const { contacts } = contactReducer;
+
+  return {
+    contacts
+  }
+}
+
+export default connect(mapStateToProps)(List)
