@@ -7,6 +7,7 @@ import StatsPage from './pages/StatsPage.js'
 import ContactDetailsPage from './pages/ContactDetailsPage.js'
 import ContactEditPage from './pages/ContactEditPage.js'
 import Navbar from './components/Navbar.js'
+import Footer from './components/Footer.js'
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
           }}
         />
       </Router>
+      <Footer></Footer>
     </div>
   }
 }

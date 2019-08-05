@@ -8,10 +8,12 @@ class ContactFilter extends Component {
 }
 
   render() {
-    return <div>
-      <input type="text" placeholder="Search Contacts" onChange={this.handleInput}></input>
+    return  <div className="input-field col s6">
+    <i className="material-icons prefix">account_circle</i>
+    <input id="icon_prefix" className="validate" type="text" placeholder="Search Contacts" onChange={this.handleInput}></input>
     </div>
   }
 }
 
 export default ContactFilter; 
+

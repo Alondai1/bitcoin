@@ -23,8 +23,12 @@ class ContactPage extends Component {
 
   render() {
     return <div className="page">
+
+
       <Link to="/edit">
-        <button>Add Contact</button>
+        <a className="waves-effect waves-light btn" onClick={this.removeContact}>  <i className="material-icons">add
+</i>
+        </a>
       </Link>
       <ContactFilter setFilter={this.setFilter}></ContactFilter>
       <UserList removeContact={this.removeContact} contacts={this.state.contacts}></UserList>

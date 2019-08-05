@@ -39,6 +39,8 @@ class ContactDetailsPage extends Component {
             <input type="text" name="phone" onChange={this.handleChange} value={this.state.contact.phone}/>
             <button>Save</button>
           </form>
+          <img src={`https://robohash.org/${this.state.contact.name}`} alt=""></img>
+
         </div>
     }
 }

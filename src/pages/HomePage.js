@@ -19,7 +19,7 @@ class HomePage extends Component {
 
 
     render() {
-        return <div className="page">
+        return <div className="home page">
             <h1>Hello {this.state.user.name}</h1>
             <p>You Have {this.state.user.coins} coins!</p>
             <p>Valued for {this.state.BCvalue} Bitcoin rate</p>

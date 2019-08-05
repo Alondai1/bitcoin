@@ -14,20 +14,25 @@ class ContactDetailsPage extends Component {
     }
 
     removeContact = async () => {
-         await ContactService.deleteContact(this.state.contact._id)
+        await ContactService.deleteContact(this.state.contact._id)
     }
 
 
     render() {
         return <div className="userDetails">
             <Link to="/contact">
-                <button>Back</button>
+                <a className="waves-effect waves-light btn">  <i className="material-icons">arrow_back
+</i>
+                </a>
             </Link>
             <Link to="/contact">
-            <button onClick={this.removeContact}>Remove</button>
+                <a className="waves-effect waves-light btn" onClick={this.removeContact}>  <i className="material-icons">delete
+</i>
+                </a>
             </Link>
             <Link to={`/edit/${this.state.contact._id}`}>
-            <button>Edit</button>
+                <a className="waves-effect waves-light btn">  <i className="material-icons">edit</i>
+                </a>
             </Link>
             <h1>{this.state.contact.name}</h1>
             <h5>{this.state.contact.email}</h5>

@@ -1,22 +1,36 @@
 .userItem{
-    background: #ccc;
+    background: rgb(218, 100, 100);
     border:1px black solid;
     border-radius: 5px;
     margin: 5px 0;
     list-style: none;
     padding:10px;
     width:300px;
+    min-height: 250px;
     text-align: center;
     transition: 0.3s ease-out all;
 }
 
+h1{
+    font-size: 3rem;
+}
+
+.userItem img {
+    height: 200px;
+}
+
+.userItem * {
+    color: black;
+}
+
 .userItem:hover{
-    background: rgb(248, 248, 248)
+    background:  rgb(226, 112, 112);
 }
 
 .contacts-container {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .chart {
@@ -30,15 +44,48 @@
     margin: 5px 0;
     list-style: none;
     padding:10px;
-    width:300px;
     text-align: center;
     transition: 0.3s ease-out all;
 }
 
+.btn {
+    margin: 10px;
+}
+
 .userDetails:hover{
-    background: rgb(216, 129, 129);
+    background: rgb(226, 112, 112);
 }
 
 .page {
     border: 1px solid black;
+    text-align: center;
+
 }
+
+nav , .page-footer {
+    background: linear-gradient(to right, rgba(76,76,76,1) 0%,rgba(0,0,0,1) 0%,rgba(71,71,71,1) 0%,rgba(44,44,44,1) 50%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%);}
+    .input-field {
+    margin: 0 auto;
+    width: 20%;
+}
+
+.page-footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 42px;
+}
+
+.page-footer .footer-copyright .container{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 8px;
+}
+
+.contact-edit {
+    display: flex;
+    justify-content: center;
+}
+
