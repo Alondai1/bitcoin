@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
 
-class Navbar extends Component {
+function Navbar  () {
 
 
-
-  render() {
     return <nav>
 
       <div className="nav-wrapper">
@@ -22,6 +20,6 @@ class Navbar extends Component {
 
    
   }
-}
+
 
 export default Navbar; 

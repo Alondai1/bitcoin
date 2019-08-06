@@ -18,8 +18,9 @@ class ContactPage extends Component {
   }
 
   setFilter = async (filterBy) => {
-    const contacts = await ContactService.getContacts({ term: filterBy })
-    this.setState({ contacts })
+    const { dispatch } = this.props
+    dispatch(getContacts({ term: filterBy })) 
+    
   }
 
 

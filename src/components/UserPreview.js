@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 
 
-class UserPreview extends Component {
-  state = { }
-  render() {
+function UserPreview (props) {
     return <li className="userItem ">
-<span>{this.props.contact.name}</span>
-<img src={`https://robohash.org/${this.props.contact.name}`} alt=""></img>
+<span>{props.contact.name}</span>
+<img src={`https://robohash.org/${props.contact.name}`} alt=""></img>
     </li>
-  }
+  
 }
 
 export default UserPreview; 

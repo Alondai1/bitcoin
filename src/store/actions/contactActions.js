@@ -9,18 +9,11 @@ export const fetchData = (data , type) => {
       data
     }
   };
-// export const fetchEditedContact = (user) => {
-//     return {
-//       type: types.EDIT_CONTACT,
-//     user
-//     }
-//   };
-
 
   
-  export const getContacts = () => {
+  export const getContacts = (term = '') => {
     return (dispatch) => {
-      return  contactService.getContacts()
+      return  contactService.getContacts(term)
         .then(response => {
           dispatch(fetchData(response, types.FETCH_CONTACTS))
         })
