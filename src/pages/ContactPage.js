@@ -3,7 +3,7 @@ import ContactService from '../services/ContactService.js'
 import UserList from '../components/UserList.js'
 import ContactFilter from '../components/ContactFilter.js'
 import { Link } from 'react-router-dom'
-import { getContacts } from '../store/actions/contactActions';
+import {getContacts} from '../store/actions/contactActions';
 import { connect } from 'react-redux';
 
 
@@ -11,16 +11,16 @@ class ContactPage extends Component {
 
 
   async componentDidMount() {
-    
+
     const { dispatch } = this.props
-    dispatch(getContacts()) 
+    dispatch(getContacts())
     // this.setState({ robots, selectedRobot: robots[0] })
   }
 
   setFilter = async (filterBy) => {
     const { dispatch } = this.props
-    dispatch(getContacts({ term: filterBy })) 
-    
+    dispatch(getContacts({ term: filterBy }))
+
   }
 
 

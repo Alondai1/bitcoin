@@ -42,7 +42,7 @@ class ContactDetailsPage extends Component {
             <h1>{this.state.contact.name}</h1>
             <h5>{this.state.contact.email}</h5>
             <h5>{this.state.contact.phone}</h5>
-            <img src={`https://robohash.org/${this.state.contact.name}`} alt=""></img>
+            <img src={`https://avatars.dicebear.com/v2/avataaars/${this.state.contact.name}.svg`} alt="" className="avatar"></img>
 
         </div>
     }

@@ -10,7 +10,7 @@ function Navbar  () {
       <div className="nav-wrapper">
         <a href="#" className="brand-logo right">Bit</a>
 
-        <ul id="nav-mobile" className="left hide-on-med-and-down">
+        <ul id="nav-mobile" className="left ">
           <li> <NavLink to="/">Home Page</NavLink> </li>
           <li> <NavLink to="/contact">Contacts</NavLink> </li>
           <li> <NavLink to="/stats">Stats</NavLink> </li>
@@ -23,3 +23,6 @@ function Navbar  () {
 
 
 export default Navbar; 
+
+
+

@@ -4,8 +4,9 @@ import { HashRouter as Router, Route } from 'react-router-dom'
 import ContactPage from './pages/ContactPage.js'
 import HomePage from './pages/HomePage.js'
 import StatsPage from './pages/StatsPage.js'
-import ContactDetailsPage from './pages/ContactDetailsPage.js'
+import ContactDetailsPage from './pages/ContactDetailsPage'
 import ContactEditPage from './pages/ContactEditPage.js'
+import Course from './pages/Course.js'
 import Navbar from './components/Navbar.js'
 import Footer from './components/Footer.js'
 
@@ -21,6 +22,7 @@ class App extends Component {
         <Navbar></Navbar>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/contact' component={ContactPage} />
+        <Route exact path='/course' component={Course} />
         <Route path='/stats' component={StatsPage} />
         <Route
           path="/contact/:id"

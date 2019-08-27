@@ -37,12 +37,12 @@ class ContactEditPage extends Component {
         
       return <div className="contact-edit">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" name="name" onChange={this.handleChange} value={this.state.contact.name}/>
-            <input type="email" name="email" onChange={this.handleChange} value={this.state.contact.email}/>
-            <input type="text" name="phone" onChange={this.handleChange} value={this.state.contact.phone}/>
+            <input type="text" name="name" onChange={this.handleChange} placeholder="Name" value={this.state.contact.name}/>
+            <input type="email" name="email" onChange={this.handleChange} placeholder="Email" value={this.state.contact.email}/>
+            <input type="text" name="phone" onChange={this.handleChange} placeholder="Phone Number" value={this.state.contact.phone}/>
             <button>Save</button>
           </form>
-          <img src={`https://robohash.org/${this.state.contact.name}`} alt=""></img>
+          <img src={`https://avatars.dicebear.com/v2/avataaars/${this.state.contact.name}.svg`} alt=""></img>
 
         </div>
     }

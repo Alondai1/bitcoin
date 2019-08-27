@@ -23,7 +23,7 @@ class HomePage extends Component {
             <h1>Hello {this.state.user.name}</h1>
             <p>You Have {this.state.user.coins} coins!</p>
             <p>Valued for {this.state.BCvalue} Bitcoin rate</p>
-            <img src={`https://robohash.org/${this.state.user.name}`} alt=""></img>
+            <img className="avatar" src={`https://avatars.dicebear.com/v2/avataaars/${this.state.user.name}.svg`} alt=""></img>
 
         </div>
     }
